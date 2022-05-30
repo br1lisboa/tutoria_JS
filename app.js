@@ -1,7 +1,7 @@
 /* "use strict" // Permite ejecutar el codigo de js de manera estricta, para seguir las buenas practicas */
 
-/* Objetos */
-const nuevaMoto = {
+/* OBJETOS */
+/* const nuevaMoto = {
     marca : "CFMOTO",
     cilindrada: "699cc",
     tipo: "offRoad",
@@ -12,7 +12,7 @@ const caracteristicas = {
     peso: 230,
     altura: 140,
     largo: 180
-}
+} */
 
 /* como ACCEDER A LAS PROPIEDADES DE UN OBJETO del objeto
 console.log(nuevaMoto.precio)
@@ -50,18 +50,70 @@ console.log(nuevaMoto)*/
 
 
 
-/*ARRAYS Siven para agrupar elementos*/
-const colores = ["azul", "blanco", "negro", "verde"]
+/* ARRAYS Siven para agrupar elementos */
+/* const colores = ["azul", "blanco", "negro", "verde"]
+const numeros = new Array (1, 2, 3, 4) */
+
 //console.log(colores)
-console.table(colores)//manera de ver el arreglo como si fuese una tabla en la consola
+//console.table(colores)//manera de ver el arreglo como si fuese una tabla en la consola
 //Tambien se lo pueden crear con el contructor
-const numeros = new Array (1, 2, 3, 4)
-console.table(numeros)
+//console.table(numeros)
 //Como accedemos a la posicion del array, por medio de los indices
-console.log(colores[1])//blanco
+//console.log(colores[1])//blanco
 //Como sabemos la extension de un arreglo
-console.log(numeros.length)
+//console.log(numeros.length)
 //Como ingresar a todos los elementos de un array, a travez de un iterador
-numeros.forEach(function (numero) { //FOREACH se traduce algo asi como ...por cada elemento del array devolveme...
-    console.log(numero)
+//numeros.forEach(function (numero) { //FOREACH se traduce algo asi como ...por cada elemento del array devolveme...
+//    console.log(numero)
+//}) 
+
+/* COMO AGREGAR O QUITAR ELEMENTOS DE UN ARRAY 
+colores[4] = "naranja" // Forma NO comun ni recomendada
+colores.push("crimson") // Forma a travez de un metodo PUSH que agrega elementos al final de arreglo
+colores.unshift("beige", "negro") // Forma mediante metodo UNSHIFT para agregar al principio del arreglo nuevos elementos
+colores.pop() // ELIMINA el ultimo elemento del ARREGLO
+colores.shift() // Elimina el primera elemento del arreglo
+colores.shift(2, 1) // Nos permite eliminar elementos de un arreglo de manera controlada por nosotros, toma dos valores el PRIMERO es el indice de que elemento eliminar, y el SEGUNDO es cuantos elementos eliminar a partir de ese indice.
+//Este enfoque esta dejando de usarse, ya que modifica nuestro array original, y esta cobrando fuerza un enfoque que se inclina por crear un nuevo array, 
+//utilizando el rest operator, o el spreed operator
+const nuevosColores = [...colores, "gris"] // Es igual al push, pero no modifica el array original
+const nuevosColores2 = ["violeta", ...colores]// Es similar al unshift, pero sin modificar el array original.
+console.table(nuevosColores)
+console.table(nuevosColores2)
+console.table(colores)*/
+
+/* const vocales = ["a", "e", "i", "o", "u"]//array UNIDIMENSIONAL.
+const alumnos = [ //array de OBJETOS, se podria decir que se logra un MULTIDIMENSIONAL
+    {nombre: "Fran", edad: 25},
+    {nombre: "Alma", edad: 22},
+    {nombre: "Sol", edad: 29},
+    {nombre: "Sabri", edad: 27}
+]
+console.table(vocales)
+console.table(alumnos) */
+
+//Como recorrer un array UNIDIMENSIONAL y ver si existe un elemento dentro?
+/* vocales.forEach(function(vocal) {
+    if(vocal == "e") {
+        console.log("La letra E es una vocal")
+    }
+}) */
+
+/*Array METHODS
+//Includes es el equivalente al foreach utilizado arriba para buscar un elemento en el arreglo. Nos devuelve un true o un false
+const vocal2  = vocales.includes("i")
+//console.log(vocal2)
+//Pero para buscar dentro de un arreglo de OBJETOS, se utiliza el SOME
+const alumnos2 = alumnos.some(alumnos => alumnos.nombre == "Alma")
+//Reduce nos sirve para sumar la propiedad del algun elemento, ejemplo, queremos sumas las edades de neustros alumnos.
+const promedioEdad = alumnos.reduce(function(total, alumnos){ // se le pasa dos parametros, el total que hara de contador, y el array
+    return total + alumnos.edad
+}, 0)
+//FILTER
+const alumnosConMenosDe26 = alumnos.filter(function(alumnos){
+    return alumnos.edad < 26
 })
+console.log(alumnosConMenosDe26) */
+
+
+// FUNCIONES
