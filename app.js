@@ -117,3 +117,21 @@ console.log(alumnosConMenosDe26) */
 
 
 // FUNCIONES
+// DECLARACION de funciones
+function suma () {
+    console.log(10 + 10)
+}
+suma() // Aqui llamamos la funcion
+
+//EXPRESION de una funcion
+const dividir = function dividir(){
+    console.log(24/2)
+}
+dividir() // llamamos la otra funcion
+
+//!!HOISTING en JS, resumidas cuentas, es la principal dif entre ambas formas de funciones, la DECL se ejecutara aunque la llamemos antes, la segunda si la llamamos antes no lo hara por que es necesario definirla primero.
+
+//IIFE funciones que se llaman a ellas mismas, no es necesario llamarlas.
+/* ( function() {
+    console.log('Esto es una funcion');
+})(); */
