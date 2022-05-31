@@ -17,7 +17,7 @@ const caracteristicas = {
 /* como ACCEDER A LAS PROPIEDADES DE UN OBJETO del objeto
 console.log(nuevaMoto.precio)
 o
-console.log(nuevaMoto['marca'])*/ 
+console.log(nuevaMoto['marca'])*/
 
 
 /* como AGREGAR O QUITAR PROPIEDADES DE UN OBJETO? 
@@ -116,16 +116,16 @@ const alumnosConMenosDe26 = alumnos.filter(function(alumnos){
 console.log(alumnosConMenosDe26) */
 
 
-// FUNCIONES
+/* FUNCIONES
 // DECLARACION de funciones
-function suma () {
+function suma() {
     console.log(10 + 10)
 }
 suma() // Aqui llamamos la funcion
 
 //EXPRESION de una funcion
-const dividir = function dividir(){
-    console.log(24/2)
+const dividir = function dividir() {
+    console.log(24 / 2)
 }
 dividir() // llamamos la otra funcion
 
@@ -135,3 +135,50 @@ dividir() // llamamos la otra funcion
 /* ( function() {
     console.log('Esto es una funcion');
 })(); */
+
+/* DIFERENCIA ENTRE METODO Y FUNCION
+Creo dos variables: 
+const numero1 = 20
+const numero2 = "20"
+console.log(parseInt(numero2)) // Como veran el parseInt es una funcion, que nos transforma una string a un numero cuando sea valido.
+console.log(numero1.toString()) // toString es un metodo que nos pasa un numero a una string, es un metodo y se diferencia facilmente por que va el nombre de la variable y un punto y seguidamente el metodo, la funcion en cambio va el nombre y entre parentesis un valor.*/
+
+/*PARAMETROS y ARGUMENTOS
+function sumar (numero1, numero2) { // Estos son parametros
+    console.log(numero1 + numero2)
+}
+sumar(10,37) // Estos son argumentos, los valores reales.
+const sumar2 = function(n1, n2){
+    console.log(n1 + n2)
+}
+sumar2(30,23)
+Parametros por default
+function restar (n1 = 0, n2 = 0) {
+    console.log(n1 - n2)
+} 
+restar(20, 1)
+restar(19, 27)
+restar(2)
+restar()*/
+
+/*FUNCIONES QUE RETORNAN VALOR
+let total = 0
+
+function agregarCarrito (precio) {
+    return total += precio
+}
+
+function calcularIVA (total) {
+    return total * 1.21
+}
+
+agregarCarrito(20)
+agregarCarrito(20)
+agregarCarrito(20)
+
+const totalMasIVA = calcularIVA(total)
+
+console.log(totalMasIVA)*/
+
+
+/* METODOS DE PROPIEDAD*/
