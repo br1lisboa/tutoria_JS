@@ -181,4 +181,19 @@ const totalMasIVA = calcularIVA(total)
 console.log(totalMasIVA)*/
 
 
-/* METODOS DE PROPIEDAD*/
+/* METODOS DE PROPIEDAD
+const reproductor = {
+    reproducir : function (id) {
+        console.log(`Repoduciendo cancion con el id: ${id}`)
+    },
+    stop : function() {
+        console.log(`Pausando la cancion`)
+    }
+}
+reproductor.borrarcancion = function(id) {
+    console.log(`Eliminando cancion con el ID: ${id}`) //OTRA FORMA DE AGREGAR 
+} 
+//SE ACCEDE COMO A LOS OBJETOS
+reproductor.reproducir(108)
+reproductor.stop()
+reproductor.borrarcancion(305) */
