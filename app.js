@@ -236,13 +236,77 @@ Mejor utilizar switch cuando hay multiples condiciones.
 /*ITERADORES 
 EJECUTAN UN CODIGO MIENTRAS UNA CONDICIONES SEA VERDADERA.-
 
-FOR > Se ejecuta un codigo mientras la condiciones sean verdaderas.
+>>>>>>>>>  FOR > Se ejecuta un codigo mientras la condiciones sean verdaderas.
 
 for (-inicializacion- let i = 0; -condicion que se debe cumplir- i < 10; -incremento- i++) {
     console.log(i) >>> imprimira del 1 al 10.
 }
 
-WHILE 
+>>>>>>>>>  WHILE >> SE EJECUTA MIENTRAS UNA CONDICION SEA VERDADERA
+
+let i = 0;  >>INDICE O VALOR INICIAL
+
+do(i < 10) {  >>CONDICION
+    console.log(i)
+    i++         >>INCREMENTO
+}
+
+>>>>>>>>>  DOWHILE
+let i = 0;
+
+do {
+    console.log(i) >> LA DIFERENCIA CON EL WHILE ES QUE ME ASEGURO QUE MI CODIGO SE EJECUTE AL MENOS UNA VEZ
+
+    i++ >> INCREMENTO
+} while (i < 10) >> ACA VA LA CONDICION
+*/
+
+/*  FOR EACH Y MAP  
+// FOREACH >> solo puede ser utilizado en arreglos. Sintaxis:
+
+nombreDelArray.forEach(function(parametro){
+    console.log(parametro.nombre)
+}) >> Usar para imprimir cosas en consola o en HTML.
+
+//MAP >> tambien solo puede ser utilizado en arreglo. Sintaxis:
+
+const mapDelArray = nombreDelArray.map(function(parametro) {
+    console.log(paramentro.nombre)
+}) >> Misma sintaxis que forEach, pero map te crea un nuevo arreglo, por lo que hay que asignarle una nueva variable que se ira llenando con el nuevo array.
+*/
 
 
-DOWHILE
+/* THIS palabra reservada, hace referencia al objeto sobre el cual se esta llamando la funcion. Ejemplo:
+const reserva = {
+    nombre: "Bruno",
+    apellido: "Lisboa",
+    total: 300,
+    pagado: false,
+    info: function(){
+        console.log(´El cliente ${this.nombre} reservo y su cantidad a pagar es de ${this.total}´)
+    }
+}
+
+reserva.info(); >> En este caso me imprimira "El cliente Bruno reservo y su cantidad a pagar es de 300". Tenemos una funcion reutilizable entre varios objetos gracias a la palabra reservada
+this que hace referencia al objeto, caso contrario deberiamos colocar reserva.nombre, lo que en caso de tener otro objeto ejempli reserva1, anularia la reutizibilidad de nuestra function.
+Solo funcion con la funcion sintaxix amplia, no con una arrow function por que esta ultima hace referencia a la ventana global. */
+
+
+/* OBJECT CONSTRUCTOR Y OBJECT LITERAL - PROGRAMACION ORIENTADA A OBJETOS 
+>>Object Literal:    --No es muy dinamico
+const persona = {
+    nombre: "Bruno",
+    apellido: "Lisboa",
+    edad: 23,
+}
+
+>>Object Contructor:    --Es mas dinamico
+function Personas(nombre, apellido, edad) {
+    this.nombre = nombre,
+    this.apellido = apellido,
+    this.edad = edad
+}
+const persona1 = new Personas ("Bruno", "Lisboa", 23)
+const persona2 = new Personas ("Sol", "Podmo", 23)
+const persona3 = new Personas ("Alma", "Lisboa", 23) 
+>>Como se vera se pueden crear objetos a travez del constructor de una manera mas dinamica. */
