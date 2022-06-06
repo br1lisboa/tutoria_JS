@@ -197,3 +197,52 @@ reproductor.borrarcancion = function(id) {
 reproductor.reproducir(108)
 reproductor.stop()
 reproductor.borrarcancion(305) */
+
+
+/* ARROW FUNCTIONS 
+La sintaxsis es la siguiente:
+const nombreArrowFunction = () => {
+    console.log()
+}
+Ahora, si es solo un parametro se puede eleiminar los parentesis, y si es sola una linea las llaves, y el return es implicito.
+const nombreArrowFunciotn = parametro1 => console.log(`Aprendiendo nuevos ${parametro1}`)
+*/
+
+
+/* ESTRUCTURAS DE CONTROL 
+if (condicion) {
+    codigo en caso de true
+} else if {
+    codigo en caso de que se de otro true
+} else {
+    en caso de false
+}
+
+== === !== !=== < > => <= || && 
+
+SWITCH - MULTIPLIES CONDICIONES P REVISAR
+const metodopago = 'tarjeta'
+switch(metodopago) {
+    case 'tarjeta':
+        console.log('pagaste con tarjeta);
+        break;
+    default:
+        console.log('aun no has pagado');
+        break;
+}
+Mejor utilizar switch cuando hay multiples condiciones.
+*/
+
+/*ITERADORES 
+EJECUTAN UN CODIGO MIENTRAS UNA CONDICIONES SEA VERDADERA.-
+
+FOR > Se ejecuta un codigo mientras la condiciones sean verdaderas.
+
+for (-inicializacion- let i = 0; -condicion que se debe cumplir- i < 10; -incremento- i++) {
+    console.log(i) >>> imprimira del 1 al 10.
+}
+
+WHILE 
+
+
+DOWHILE
