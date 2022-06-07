@@ -400,4 +400,98 @@ usuarioAutenticado
 >> En los primses existen 3 valores posibles:
     1- Pending, el promises no se ha cumplido, pero no se ha rechazado.
     2- Fulfilled, es cuando se cumplio el primse.
-    3- Rejected, se ha rechazado o no se pudo cumplir.
+    3- Rejected, se ha rechazado o no se pudo cumplir.*/
+
+
+/* NOTIFICACION API >> API nativa de JS. Muy importante por que es necesario solicitar permisos para acceder a ubicacion, microfono, camara, etc.
+const buton = document.querySelector(#buton)
+buton.addEventListener("click", () => {
+    Notifications.requestPermission()   >>API nativa de JS
+        then.(resultado => console.log(´El resultado es ${resultado}´))     >> Nos data garanted o rejected dependiendo.
+})
+
+if(Notification.permission == "garanted") {
+    New Notification ("Bla bla bla de notificacion") {
+        icon : "img/img.jpg"
+        body : "Text de cuerpo de notif"
+    }
+} */
+
+
+/* ASYNC / AWAIT  >> Ej. Dos personas entran a un bar, uno pide un vaso de agua, y otro un trago elaborado. No deberia esperar el del vaso a que se termine de hacer el trago, justamente de eso se trata Async / await. 
+Permite ejecutar codigo mientras otro se carga o procesa. Ejemplo mostrar una web mientras se carga la base de datos.
+Ej:
+
+function descargarNwClientes() {
+    return new Promise(resolve => {
+        console.log("Cargando clientes...espere")
+
+        setTimeout(function(){
+            resolve("Mensaje..")
+        }5000)       
+    })
+}
+
+async function app () {                                     >>vemos la aplicacion de async
+    try {
+        const resultado = await descargarNwClientes()       >>vemos la aplicacion de await
+        >>aca va todo codigo que se va a ejecutar dependiendo del await<<
+        console.log(resultado)
+    } catch (error) {
+        console.log(error)
+    }
+}
+app()
+>>todo el codigo que se va a ejecutar sin trabarse<<
+
+>> aca en primera instancia veremos que para que se ejecute app, deberemos esperar los 5 sec del setTimeout de la f descargarNwClientes
+
+setInterval(() => {
+    console.log("Mensaje..")
+}3000)
+
+COMO TRABAJAR CON DOS CONSULTAR ASYNC / AWAIT
+Ej:
+
+function descargarNwClientes() {
+    return new Promise(resolve => {
+        console.log("Cargando clientes...espere")
+
+        setTimeout(function(){
+            resolve("Mensaje..")
+        }5000)       
+    })
+}
+
+function descargarNwProducts() {
+    return new Promise(resolve => {
+        console.log("Cargando productos...espere")
+
+        setTimeout(function(){
+            resolve("Mensaje..")
+        }3000)       
+    })
+}
+
+async function app () {                                     >>vemos la aplicacion de async
+    try {
+        const clientes = await descargarNwClientes()       >>vemos la aplicacion de await
+        const productos = await descargarNwProducts()
+        >>aca va todo codigo que se va a ejecutar dependiendo del await<<
+        console.log(clientes)
+        console.log(productos)
+        **********ESTO ESTA MAL, POR QUE SE EJECUTARA PRIMERO descargarNwClientes() LUEGO descargarNwProducts().
+
+        const resultado = await.Promise.all([descargarNwClientes(), descargarNwProducts()])
+        console.log([0])
+        console.log([1])
+        **********MANERA CORRECTA, GANAMOS EN PERFORMANCE.
+    } catch (error) {
+        console.log(error)
+    }
+} */
+
+
+/* FERCH API remplazo a AJAX >> Te permite enviar info al servidor u obtener esta info en tiempo real, tambien puede obtener datos de un archivo local JSON. Utiliza promises o asyn/await.
+JSON es JavaScript Object Notation >> Es un lenguaje de transporte de datos. Este puede ser creado en cualquier lenguaje y ser consumido en JS por medio de Fetch Api y mostrarlo en tu web.
+
