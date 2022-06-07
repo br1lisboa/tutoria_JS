@@ -310,3 +310,94 @@ const persona1 = new Personas ("Bruno", "Lisboa", 23)
 const persona2 = new Personas ("Sol", "Podmo", 23)
 const persona3 = new Personas ("Alma", "Lisboa", 23) 
 >>Como se vera se pueden crear objetos a travez del constructor de una manera mas dinamica. */
+
+
+/* PROTOTYPES >> Nos permitira crear funciones que solo se utilizan en un objeto en especifico. Nos permite tener un codigo mas organizado.
+function Personas(nombre, apellido, edad) {
+    this.nombre = nombre,
+    this.apellido = apellido,
+    this.edad = edad
+}
+
+>>Sintaxis del PROTOTYPE:
+Personas.prototype.formatearPersona = function () {
+    return ´La persona ${this.nombre} ${this.apellido} tiene ${this.edad} años.´
+}
+
+const persona1 = new Personas ("Bruno", "Lisboa", 23)
+const persona2 = new Personas ("Sol", "Podmo", 23)
+const persona3 = new Personas ("Alma", "Lisboa", 23) 
+
+console.log(persona1.formatearPersona()) >> Este format solo funcionara para el objeto Personas,*/
+
+
+/*CLASSES >> Sintaxis mejorada de la clase function Class(parametro1, parametro2) {this.parametro1 = parametro1, this.parametro2 = parametro2}
+class Personas {
+    constructor (nombre, apellido, edad, altura) {
+        this.nombre= nombre,
+        this.apellido = apellido,
+        this.edad = edad,
+        this.altura = altura
+    }
+    formatearPersona() {
+        return ´La persona ${this.nombre} ${this.apellido} tiene ${this.edad} años.´ >>> Mejora la sintaxis del Prototype    >>METODO
+    }
+    retornarAltura() {
+        return ´${this.nombre} tiene ${this.altura} cms.´   >>METODO
+    }
+}
+const persona1 = new Personas ("Bruno", "Lisboa", 23, 180)
+const persona2 = new Personas ("Sol", "Podmo", 23, 160)
+const persona3 = new Personas ("Alma", "Lisboa", 23, 80) */
+
+
+/*POO - HERENCIA >> Programacion orientada a objetos, herencia. Sirve para heredar el constructor como las funciones de otra clase.
+Sintaxis:
+class Clientes extends Personas {
+    constructor (nombre, apellido, edad, fiel) {
+        super (nombre, apellido, edad), >> funcion que va al constructor padre, y buscara los valores que le pases a la funcion.
+        this.fiel= fiel
+    }
+    formatearPersona() {
+        return ´${super.formatearPersona) y es un cliente fiel : ${this.fiel}´
+}
+const cliente1 = new Clientes ("Juan", "Sancho", 32, true);
+console.log(cliente1.formatearPersona()) >> Por mas que no tenga este metodo la clase Clientes, la hereda de Personas. */
+
+
+/* TRY CATCH >> En JS cuando hay un error, el codigo deja de funcionar. Eso con el TRYCATCH se soluciona, el codigo seguira funcionando pero te dira DONDE esta el error.
+Sintaxix:
+const numero1 = 10
+const numero3 = 20
+
+try {                           >> Es la parte que intetara hacer algo, y si no puede caera en el catch.
+    console.log(numero2)
+} catch (error) {
+    console.log(error)          >> Te informara que error existe
+} */
+
+
+/* PROMISES EN JS >> Una promesa refleja un valor que podra estar disponible ahora, en un futuro, o nunca.
+Sintaxis:
+const usuarioAutenticado = new Promise ( (resolve, reject) => {     >> Cuando se ejecuta un Promise se pasan dos valores automaticamente, uno es resolve y otro reject.
+    const auth = true                                               >> Resolve se va a ejecutar cuando el promise se cumple, Reject el promise no se cumple 
+
+    if(auth) {
+        resolve("Usuario autenticado")   >> Resolve se va a ejecutar cuando el promise se cumple   
+    } else {                                                                    >> Ambas son funciones. entonces le podemos pasa valores.
+        reject("No se pudo autenticar")    >> Reject se ejecuta cuando el promise no se cumple
+    }
+})
+
+usuarioAutenticado 
+    .then (function (resultado) {    >>> De esta manera extraemos la informacion del promise resolve.
+        console.log(resultado)     
+    })                                                                                                        
+    .catch (function (error){        >>> De esta manera extraeremos la inforaciom del rejected.
+        console.log(error)
+    })
+
+>> En los primses existen 3 valores posibles:
+    1- Pending, el promises no se ha cumplido, pero no se ha rechazado.
+    2- Fulfilled, es cuando se cumplio el primse.
+    3- Rejected, se ha rechazado o no se pudo cumplir.
