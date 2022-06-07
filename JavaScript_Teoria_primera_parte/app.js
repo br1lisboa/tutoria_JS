@@ -494,4 +494,63 @@ async function app () {                                     >>vemos la aplicacio
 
 /* FERCH API remplazo a AJAX >> Te permite enviar info al servidor u obtener esta info en tiempo real, tambien puede obtener datos de un archivo local JSON. Utiliza promises o asyn/await.
 JSON es JavaScript Object Notation >> Es un lenguaje de transporte de datos. Este puede ser creado en cualquier lenguaje y ser consumido en JS por medio de Fetch Api y mostrarlo en tu web.
+Sintaxis con Promises:
 
+function obtenerEmpleados(){
+
+    const baseDeDatos = "bd.json"   >> Colocar al archivo como una variable.
+    
+    fetch(baseDeDatos)   >> Toma como valor una url, ej, API de goog "http://www.google.com/api" o un archivo, como el que creamos.
+        .then(resultado => {
+            return resultado.json() >> Aca el return es implicito si lo hacemos como arrowf but por razones de entendimiento dejamos el return.
+        })
+        .then(datos => {
+            //console.log(datos)
+            const {empleados} = datos >> Destruct
+            //console.log(empleados)
+            empleados.forEach(empleado => {
+                console.log(empleado)
+                console.log(empleado.id)
+                console.log(empleado.nombre)
+                console.log(empleado.puesto)
+
+
+            })
+        })
+}
+
+obtenerEmpleados()
+
+>> Se puede usar con async y await, sintaxis:
+
+async function obtenerEmpleados(){
+
+    const baseDeDatos = "bd.json"   >> Colocar al archivo como una variable.
+    
+                                            fetch(baseDeDatos)   >> Toma como valor una url, ej, API de goog "http://www.google.com/api" o un archivo, como el que creamos.
+                                                .then(resultado => {
+                                                    return resultado.json() >> Aca el return es implicito si lo hacemos como arrowf but por razones de entendimiento dejamos el return.
+                                                })
+                                                .then(datos => {
+                                                    //console.log(datos)
+                                                    const {empleados} = datos >> Destruct
+                                                    //console.log(empleados)
+                                                    empleados.forEach(empleado => {
+                                                        console.log(empleado)
+                                                        console.log(empleado.id)
+                                                        console.log(empleado.nombre)
+                                                        console.log(empleado.puesto)
+                                                    })
+                                                })
+    
+    const resultad = await fetch(baseDeDatos)
+    const datos = resultad.json()
+    console.log(datos)
+}
+
+obtenerEmpleados()
+*/
+
+/*<<<<<<<<<<<<<<<< SEGUNDA PARTE   >>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<< INTERACTIVIDAD  >>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<      DOM        >>>>>>>>>>>>>>>>>*/
