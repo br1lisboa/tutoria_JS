@@ -50,13 +50,13 @@ window.onscroll = function () {
 
 // >>>>>>>>>>> REACCIONAR A CLICKS EN JS <<<<<<<<<<<<
 // Seleccionar elementos y asociarles un evento.
-const btnEnviar = document.querySelector(".boton--primario")
+/* const btnEnviar = document.querySelector(".boton--primario")
 btnEnviar.addEventListener("click", (e) => {
     console.log(e)
     e.preventDefault()
     //Estos pasos arriba son necesarios para vaidar un form antes de enviarlos a un servidor.
     console.log("enviando form..")
-})
+}) */
 
 // >>>>>>>>>> EVENTOS DEL TECLADO - INPUTS Y TEXT AREA <<<<<<<<<<<
 // Nos sirve para validar o leer lo que el usuario va ingresando en texto.
@@ -88,4 +88,52 @@ function leerTexto (e) {
     //console.log(e.target)
     datos[e.target.id] = e.target.value
     console.log(datos)
+}
+
+// >>>>>>>> EVENTOS EN FORMULARIOS <<<<<<<<<
+// EVENTO SUBMIT y EVENTO CLICK
+// El evento de SUBMIT
+const formulario = document.querySelector(".formulario")
+formulario.addEventListener("submit", (e)=>{
+    e.preventDefault()
+
+    //>> Validar FORMULARIO
+    const {nombre, email, mensaje} = datos // >> DISTRUCTION > Agarrar un objeto global, y separarlo en variables
+    /* console.log(nombre)
+    console.log(email)
+    console.log(mensaje) */
+
+    if(nombre == "" || email == "" || mensaje == "") {
+        mostrarError("Todos los campos son obligatorios")
+        return // Corta la ejec del codigo
+    }
+    //>> Enviar FORMULARIO - Crear la alerta de se envio correctamente
+    mostrarMensaje("El mensaje se envio correctamente")
+
+    //console.log("enviando formulario..")
+})
+// Usualmente en un formulario, vas a asociarlo a un submit. El evento click se usa en imagenes..textos..etc, pero para form el evento que se usa es submit.
+// Organizacion recomendad de un proyecto. Variables 1ro, luego los eventListeners 2dos, funciones 3ros.
+function mostrarError(mensaje) {
+    const error = document.createElement("P")
+    error.textContent = mensaje
+    error.classList.add("error")
+
+    formulario.appendChild(error)
+    //Que desaparezca despues de unos seg.
+    setTimeout(()=>{
+        error.remove()
+    }, 3000)
+    //console.log(error)
+}
+
+function mostrarMensaje(mensaje){
+    const mensajeEnviado = document.createElement("P")
+    mensajeEnviado.textContent = mensaje
+    mensajeEnviado.classList.add("correcto")
+
+    formulario.appendChild(mensajeEnviado)
+    setTimeout(()=>{
+        mensajeEnviado.remove()
+    }, 3000)
 }
